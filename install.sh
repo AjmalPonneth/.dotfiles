@@ -5,7 +5,6 @@ set -euo pipefail
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 PACKAGES=(
-  nvim
   tmux
   zsh
 )
@@ -19,6 +18,14 @@ fi
 echo "Installing dotfiles from: $DOTFILES_DIR"
 
 cd "$DOTFILES_DIR"
+
+echo "Installing nvim..."
+mkdir -p "$HOME/.config"
+if [[ -e "$HOME/.config/nvim" && ! -L "$HOME/.config/nvim" ]]; then
+  echo "Skipping nvim: $HOME/.config/nvim exists and is not a symlink."
+else
+  ln -sfn "$DOTFILES_DIR/kickstart.nvim" "$HOME/.config/nvim"
+fi
 
 for package in "${PACKAGES[@]}"; do
   if [[ -d "$package" ]]; then
