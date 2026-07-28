@@ -1,4 +1,4 @@
 [submodule "nvim/.config/nvim"]
 	path = nvim/.config/nvim
-	url = git@github.com:nvim-lua/kickstart.nvim.git
+	url = git@github.com:AjmalPonneth/kickstart.nvim.git
 	branch = master
