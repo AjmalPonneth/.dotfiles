@@ -24,7 +24,7 @@ mkdir -p "$HOME/.config"
 if [[ -e "$HOME/.config/nvim" && ! -L "$HOME/.config/nvim" ]]; then
   echo "Skipping nvim: $HOME/.config/nvim exists and is not a symlink."
 else
-  ln -sfn "$DOTFILES_DIR/kickstart.nvim" "$HOME/.config/nvim"
+  ln -sfnT "$DOTFILES_DIR/kickstart.nvim" "$HOME/.config/nvim"
 fi
 
 for package in "${PACKAGES[@]}"; do
