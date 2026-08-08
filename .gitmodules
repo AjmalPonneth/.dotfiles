@@ -1,4 +1,4 @@
-[submodule "kickstart.nvim"]
-	path = kickstart.nvim
+[submodule "external/kickstart.nvim"]
+	path = external/kickstart.nvim
 	url = git@github.com:AjmalPonneth/kickstart.nvim.git
 	branch = master
